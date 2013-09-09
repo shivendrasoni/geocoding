@@ -1,0 +1,42 @@
+<%- model_class = Place -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:rent) %>:</strong></dt>
+  <dd><%= @place.rent %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @place.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name("Street Address") %>:</strong></dt>
+  <dd><%= @place.houseno %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Area) %>:</strong></dt>
+  <dd><%= @place.street %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+  <dd><%= @place.city %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
+  <dd><%= @place.country %></dd>
+</dl>
+
+<hr>
+
+<h4> Nearby Locations </h4>
+
+  <ul>
+  <%for place in @place.nearbys(10) %>
+    <li><%= link_to place.address, place %> ( About <%= ((place.distance)*1.61).round(2) %> kms away) </li>
+  <% end %>
+</ul>
+
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              places_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_place_path(@place), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              place_path(@place),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
