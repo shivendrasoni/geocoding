@@ -17,5 +17,5 @@ Geocoder::Configuration.language = :en
 
 
 # use a proxy to access the service:
-Geocoder::Configuration.http_proxy  = "iit2010027:ventriloquist@172.31.1.4:8080"
-Geocoder::Configuration.https_proxy = "iit2010027:ventriloquist@172.30.1.4:8080" # only if HTTPS is needed
+#Geocoder::Configuration.http_proxy  = "iit2010027:ventriloquist@172.31.1.4:8080"
+#Geocoder::Configuration.https_proxy = "iit2010027:ventriloquist@172.30.1.4:8080" # only if HTTPS is needed
