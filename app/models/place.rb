@@ -19,6 +19,7 @@ class Place < ActiveRecord::Base
 
   def gmaps4rails_infowindow
     "<ul class='list-unstyled'>
+    <li>Name: #{user}</li>
     <li>Rent: Rs. #{rent}</li>
     <li>Address: #{address}</li>
     </ul>"

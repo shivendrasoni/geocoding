@@ -12,6 +12,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:user) %></th>
       <th><%= model_class.human_attribute_name(:rent) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:full_address) %></th>
@@ -22,9 +23,10 @@
     <% @places.each do |place| %>
       <tr>
         <td><%= link_to place.id, place_path(place) %></td>
+        <td><%= link_to place.user, place_path(place) %></td>
         <td><%= place.rent %></td>
         <td><%= place.description %></td>
-        <td><%= link_to place.address, place %></td>
+        <td><%= place.address%></td>
 
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
