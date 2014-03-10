@@ -1,5 +1,8 @@
-HEADS UP : This is based off rails 3.2 So, many gems upgraded for rails 4 might not play nice. I'll look into it when I can.
+
 -------------------------------------------------------------------------
+HEADS UP : This is based off rails 3.2 So, many gems upgraded for rails 4 might not play nice. I'll look into it when I can.
+
+
 Instructions to run :
 
 rake db:migrate
